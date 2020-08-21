@@ -34,7 +34,7 @@ class PersonForm extends Component {
     async getPersonInfo() {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
                     personInfo(refLinkUuid:"${this.props.link_uuid}"){
@@ -112,7 +112,7 @@ class RecommendButton extends Component {
     async getKindof() {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
                     links(uuid:"${this.props.link_uuid}")
@@ -135,7 +135,7 @@ class RecommendButton extends Component {
     async getRecommendInfo() {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
                     recommendInfo(refLinkUuid:"${this.props.link_uuid}")
@@ -166,7 +166,7 @@ class RecommendButton extends Component {
     async ToggleRecommend() {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `mutation{
                     toggleRecommend(

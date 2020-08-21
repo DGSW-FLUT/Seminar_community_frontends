@@ -72,7 +72,7 @@ class WriteForm extends Component {
         if (this.props.Edit === true) {
             const result = await axios({
                 method: 'POST',
-                url: 'http://localhost:8000/api',
+                url: '/api',
                 data: {
                     query: `mutation{
                         updatePost(
@@ -99,7 +99,7 @@ class WriteForm extends Component {
         } else {
             const result = await axios({
                 method: 'POST',
-                url: 'http://localhost:8000/api',
+                url: '/api',
                 data: {
                     query: `mutation {
                         createPost(
@@ -210,7 +210,7 @@ class PostView extends Component {
         axios({
             //POST
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
                     links(uuid:"${link_uuid}"){
@@ -244,7 +244,7 @@ class PostView extends Component {
     async doDeletePost(uuid) {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `mutation{
                     deletePost(uuid:"${uuid}"){
@@ -397,7 +397,7 @@ class PageOfRequestSeminar extends Component {
     parseRequestdata() {
         axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: get_posts_of_request_seminar,
             },

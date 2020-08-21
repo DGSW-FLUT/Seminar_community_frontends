@@ -34,7 +34,7 @@ class PageOfSearchResults extends Component {
         if (keyword.length > 0) {
             axios({
                 method: 'POST',
-                url: 'http://localhost:8000/api',
+                url: '/api',
                 data: {
                     query: `query{
                         search(keyword:"${keyword}"){

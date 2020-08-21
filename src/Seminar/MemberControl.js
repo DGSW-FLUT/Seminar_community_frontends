@@ -129,7 +129,7 @@ class MemberControl extends Component {
     async doLogin(id_value, pw_value) {
         const result = await axios({
             method: "POST",
-            url: "http://localhost:8000/api",
+            url: "/api",
             data: {
                 query: `mutation {tokenAuth(username: "${id_value}", password: "${pw_value}"){success,errors, unarchiving, token, unarchiving, refreshToken, user {id, username, uuid }}}`
             },
@@ -159,7 +159,7 @@ class MemberControl extends Component {
     async doSignup(id_value, pw_value, pw_confirm, email_value){
         const result = await axios({
             method: "POST",
-            url: "http://localhost:8000/api",
+            url: "/api",
             data: {
                 query: `mutation {
                     register(
@@ -217,7 +217,7 @@ class MemberControl extends Component {
           }`
           axios({
             method: "POST",
-            url: "http://localhost:8000/api",
+            url: "/api",
             data: {
                 query: Q
             },

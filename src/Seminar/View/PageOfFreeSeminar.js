@@ -64,7 +64,7 @@ class WriteForm extends Component {
         if (this.props.Edit === true) {
             const result = await axios({
                 method: 'POST',
-                url: 'http://localhost:8000/api',
+                url: '/api',
                 data: {
                     query: `mutation{
                         updatePost(
@@ -90,7 +90,7 @@ class WriteForm extends Component {
         } else {
             const result = await axios({
                 method: 'POST',
-                url: 'http://localhost:8000/api',
+                url: '/api',
                 data: {
                     query: `mutation {
                         createPost(
@@ -189,7 +189,7 @@ class PostView extends Component {
         const link_uuid = new URLSearchParams(window.location.search).get('v');
         axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
                     links(uuid:"${link_uuid}"){
@@ -221,7 +221,7 @@ class PostView extends Component {
     async doDeletePost(uuid) {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `mutation{
                     deletePost(uuid:"${uuid}"){
@@ -355,7 +355,7 @@ class PageOfFreeSeminar extends Component {
     parseFreedata() {
         axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: get_posts_of_free_seminar,
             },

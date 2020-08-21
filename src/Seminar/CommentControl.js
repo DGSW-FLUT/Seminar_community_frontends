@@ -19,7 +19,7 @@ class CommentControl extends Component {
     async getComments() {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
                     comment(refLinkUuid:"${this.props.link_uuid}"){
@@ -64,7 +64,7 @@ class CommentControl extends Component {
     async doCommentCreate(user) {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `mutation{
                     createComment(
@@ -94,7 +94,7 @@ class CommentControl extends Component {
     async deleteComment(comment) {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `mutation{
                     deleteComment(uuid:"${comment.uuid}"){

@@ -96,7 +96,7 @@ class WriteForm extends Component {
         if (this.props.Edit === true) {
             const result = await axios({
                 method: 'POST',
-                url: 'http://localhost:8000/api',
+                url: '/api',
                 data: {
                     query: `mutation{
                         updatePost(
@@ -126,7 +126,7 @@ class WriteForm extends Component {
         } else {
             const result = await axios({
                 method: 'POST',
-                url: 'http://localhost:8000/api',
+                url: '/api',
                 data: {
                     query: `mutation {
                         createPost(
@@ -323,7 +323,7 @@ class PostView extends Component {
         axios({
             //POST
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
                     links(uuid:"${link_uuid}"){
@@ -352,7 +352,7 @@ class PostView extends Component {
         axios({
             //COMMENT
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
                     comment(refLinkUuid:"${link_uuid}"){
@@ -378,7 +378,7 @@ class PostView extends Component {
     async doDeletePost(uuid) {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `mutation{
                     deletePost(uuid:"${uuid}"){
@@ -505,7 +505,7 @@ class PageOfRecruitSeminar extends Component {
     parseRecruitdata() {
         axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: get_posts_of_recruit_seminar,
             },

@@ -21,7 +21,7 @@ class PlanCalendar extends Component {
     async getCalendar() {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `query{
               cal{
@@ -63,7 +63,7 @@ class PlanCalendar extends Component {
         if (title) {
             const result = await axios({
                 method: 'POST',
-                url: 'http://localhost:8000/api',
+                url: '/api',
                 data: {
                     query: `mutation{
               createCalendar(
@@ -88,7 +88,7 @@ class PlanCalendar extends Component {
     async handledelete(event) {
         const result = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/api',
+            url: '/api',
             data: {
                 query: `mutation{
             deleteCalendar(
